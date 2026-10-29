@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://scripts/Projectile.gd" id="1_script"]
+
+[sub_resource type="SphereShape3D" id="shape"]
+radius = 0.22
+
+[sub_resource type="StandardMaterial3D" id="mat"]
+shading_mode = 0
+albedo_color = Color(0.55, 0.9, 1, 1)
+
+[sub_resource type="SphereMesh" id="mesh"]
+material = SubResource("mat")
+radius = 0.2
+height = 0.4
+radial_segments = 16
+rings = 8
+
+[node name="MagicMissile" type="Area3D"]
+collision_layer = 8
+collision_mask = 5
+monitorable = false
+script = ExtResource("1_script")
+speed = 12.0
+damage = 15
+max_distance = 12.0
+target_group = &"enemies"
+hit_color = Color(0.6, 0.9, 1, 0.9)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("shape")
+
+[node name="Mesh" type="MeshInstance3D" parent="."]
+cast_shadow = 0
+mesh = SubResource("mesh")

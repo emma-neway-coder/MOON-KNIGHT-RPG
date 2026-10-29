@@ -1,0 +1,12 @@
+{
+  "godotTools.lsp.serverPort": 6005,
+  "files.exclude": {
+    "**/.godot": true,
+    "**/*.import": true,
+    "**/*.uid": true
+  },
+  "[gdscript]": {
+    "editor.insertSpaces": false,
+    "editor.tabSize": 4
+  }
+}
